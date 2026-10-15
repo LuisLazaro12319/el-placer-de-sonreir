@@ -7,8 +7,8 @@
 export const CLINIC = {
   name: 'El Placer de Sonreír',
   initials: 'PS',
-  // Frase para "En {name} te atiende ...". Se cambia por los nombres cuando el consultorio los confirme.
-  professional: 'nuestro equipo de odontólogos',
+  // Frase para "En {name} te atiende ...".
+  professional: 'el Dr. Carlos',
   street: 'Av. Chiclana 4048',
   locality: 'Ciudad de Buenos Aires',
   province: 'Argentina',
@@ -71,7 +71,8 @@ export interface TeamMember {
 }
 
 // Equipo de trabajo del consultorio. Completar nombre y foto de cada integrante.
-export const TEAM: TeamMember[] = [{ role: 'Equipo odontológico', name: null, photo: null }];
+// Apellido y foto: A CONFIRMAR con el consultorio.
+export const TEAM: TeamMember[] = [{ role: 'Odontólogo', name: 'Dr. Carlos', photo: null }];
 
 // A CONFIRMAR con el consultorio: lista de ejemplo para la demo; se quita lo que no realicen.
 export const SERVICES: DentalService[] = [
