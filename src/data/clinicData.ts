@@ -103,6 +103,25 @@ export const HIGHLIGHTS: Highlight[] = [
   { icon: 'calendar', title: 'Turnos rápidos', text: 'Confirmación vía WhatsApp' },
 ];
 
+export interface Review {
+  /** Nombre y inicial tal como figura en Google; null si el extracto no muestra autor. */
+  author: string | null;
+  text: string;
+}
+
+// Extractos textuales de opiniones públicas de la ficha de Google Maps (5 estrellas).
+export const REVIEWS: Review[] = [
+  {
+    author: 'Daiana C.',
+    text: 'Excelente atención. Te explican todo bien detallado para que no haya dudas. Súper recomendado.',
+  },
+  {
+    author: 'Noelia A.',
+    text: 'Muy buena atención por parte del Dr. Me recompuso un arreglo que se me había salido y quedó re bien!',
+  },
+  { author: null, text: 'Tuvo una dulzura para atenderme y una paciencia para explicar todas mis dudas.' },
+];
+
 export interface DentalService {
   id: string;
   name: string;
