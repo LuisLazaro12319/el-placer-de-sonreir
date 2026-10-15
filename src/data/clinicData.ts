@@ -119,7 +119,12 @@ export const REVIEWS: Review[] = [
     author: 'Noelia A.',
     text: 'Muy buena atención por parte del Dr. Me recompuso un arreglo que se me había salido y quedó re bien!',
   },
+  {
+    author: 'Magali S.',
+    text: 'Muy buena atención. Fui a la sucursal de av directorio y el odontólogo Carlos muy amable…',
+  },
   { author: null, text: 'Tuvo una dulzura para atenderme y una paciencia para explicar todas mis dudas.' },
+  { author: null, text: 'Excelente atención y profesionalidad.' },
 ];
 
 export interface DentalService {
