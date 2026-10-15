@@ -10,9 +10,13 @@ export const CLINIC = {
   // Frase para "En {name} te atiende ...".
   professional: 'el Dr. Carlos',
   street: 'Av. Chiclana 4048',
+  // Las dos sedes en una línea (inicio, menú, pie).
+  streets: 'Av. Chiclana 4048 y Av. Directorio 3419',
   locality: 'Ciudad de Buenos Aires',
   province: 'Argentina',
   fullAddress: 'Av. Chiclana 4048, C1437JMO Ciudad Autónoma de Buenos Aires',
+  // Año desde el que atienden, según el perfil de WhatsApp Business del consultorio.
+  since: 2005,
   phone: '011 2636-7902',
   // A CONFIRMAR: es el teléfono de la ficha de Google; se asume que atiende por WhatsApp.
   whatsappNumber: '5491126367902',
@@ -38,6 +42,51 @@ export const CLINIC = {
   locationLabel: 'Ciudad de Buenos Aires',
 };
 
+export interface Branch {
+  id: string;
+  /** Nombre corto para el selector de sedes. */
+  label: string;
+  fullAddress: string;
+  mapsUrl: string;
+  coordinates: { lat: number; lng: number };
+  /** Teléfono propio de la sede; null si no se conoce. */
+  phone: string | null;
+  /** Si es true se muestran los horarios de SCHEDULE; si no, se invita a consultarlos por WhatsApp. */
+  showSchedule: boolean;
+}
+
+// Sedes del consultorio. La segunda salió del perfil de WhatsApp Business; horarios y teléfono: A CONFIRMAR.
+export const BRANCHES: Branch[] = [
+  {
+    id: 'chiclana',
+    label: 'Av. Chiclana 4048',
+    fullAddress: CLINIC.fullAddress,
+    mapsUrl: CLINIC.mapsUrl,
+    coordinates: CLINIC.coordinates,
+    phone: CLINIC.phone,
+    showSchedule: true,
+  },
+  {
+    id: 'directorio',
+    label: 'Av. Directorio 3419',
+    fullAddress: 'Av. Directorio 3419, C1407HFB Ciudad Autónoma de Buenos Aires',
+    mapsUrl: 'https://maps.app.goo.gl/Pv9hdDeMGLFbsN7G8',
+    coordinates: { lat: -34.6373475, lng: -58.4738056 },
+    phone: null,
+    showSchedule: false,
+  },
+];
+
+// Obras sociales y prepagas que menciona el perfil de WhatsApp Business del consultorio.
+export const COVERAGES: string[] = [
+  'OSPJN',
+  'Medifé',
+  'Sancor Salud',
+  'Swiss Medical',
+  'Fondo Compensador Telefónico',
+  'Luis Pasteur',
+];
+
 export interface Highlight {
   icon: 'star' | 'heart' | 'calendar' | 'users';
   title: string;
@@ -47,10 +96,10 @@ export interface Highlight {
 // Las tres cajitas debajo del inicio. Se pueden sumar otras que el consultorio confirme
 // (por ejemplo "Clínica habilitada" o la cantidad de pacientes atendidos).
 export const HIGHLIGHTS: Highlight[] = [
-  // A CONFIRMAR con el consultorio: cifra de ejemplo para la demo.
-  { icon: 'users', title: '+1.000 pacientes felices', text: 'Confían en nosotros para cuidar su sonrisa' },
-  // Sale del Instagram del consultorio: "Obras sociales. Diferentes medios de pago".
-  { icon: 'heart', title: 'Obras sociales y medios de pago', text: 'Consultanos por tu cobertura' },
+  // Sale del perfil de WhatsApp Business del consultorio: "Llevamos 20 años ... Desde 2005".
+  { icon: 'star', title: 'Desde 2005', text: 'Cuidando la salud bucal y la estética de nuestros pacientes' },
+  // Sale de su WhatsApp Business: obras sociales y prepagas (ver COVERAGES).
+  { icon: 'heart', title: 'Obras sociales y prepagas', text: 'OSPJN, Medifé, Swiss Medical y más' },
   { icon: 'calendar', title: 'Turnos rápidos', text: 'Confirmación vía WhatsApp' },
 ];
 

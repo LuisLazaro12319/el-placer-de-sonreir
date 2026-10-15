@@ -109,7 +109,8 @@ export const ProfessionalSection: React.FC = () => {
                           </span>
                         </h3>
                         <p className="text-lg text-slate-600 leading-relaxed mb-7">
-                          En {CLINIC.name} te atiende {CLINIC.professional}. Escribinos por WhatsApp para contarnos qué
+                          Desde {CLINIC.since} cuidamos la salud bucal y la estética de nuestros pacientes. En{' '}
+                          {CLINIC.name} te atiende {CLINIC.professional}. Escribinos por WhatsApp para contarnos qué
                           necesitás y coordinar tu turno.
                         </p>
 
@@ -127,9 +128,7 @@ export const ProfessionalSection: React.FC = () => {
                           </a>
                           <div className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-teal-50 text-teal-900 border border-cyan-200">
                             <MapPin className="w-4 h-4 text-teal-600" />
-                            <span>
-                              {CLINIC.street}, {CLINIC.locality}
-                            </span>
+                            <span>{CLINIC.streets}</span>
                           </div>
                         </div>
                       </>

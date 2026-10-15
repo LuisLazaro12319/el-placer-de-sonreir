@@ -1,6 +1,6 @@
 import React from 'react';
 import { MapPin, Phone } from 'lucide-react';
-import { CLINIC, SCHEDULE } from '../data/clinicData';
+import { BRANCHES, CLINIC, SCHEDULE } from '../data/clinicData';
 import { InstagramIcon, WhatsAppIcon } from './BrandIcons';
 
 export const Footer: React.FC = () => {
@@ -50,12 +50,14 @@ export const Footer: React.FC = () => {
           <div className="space-y-3">
             <div className="text-xs font-bold uppercase tracking-wider text-teal-950">Contacto</div>
             <ul className="space-y-2.5 text-teal-900">
-              <li className="flex items-start gap-2">
-                <MapPin className="w-4 h-4 mt-0.5 text-teal-800 shrink-0" />
-                <a href={CLINIC.mapsUrl} target="_blank" rel="noopener noreferrer" className="hover:text-teal-950">
-                  {CLINIC.fullAddress}
-                </a>
-              </li>
+              {BRANCHES.map((b) => (
+                <li key={b.id} className="flex items-start gap-2">
+                  <MapPin className="w-4 h-4 mt-0.5 text-teal-800 shrink-0" />
+                  <a href={b.mapsUrl} target="_blank" rel="noopener noreferrer" className="hover:text-teal-950">
+                    {b.fullAddress}
+                  </a>
+                </li>
+              ))}
               <li className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-teal-800 shrink-0" />
                 <a href={`tel:${CLINIC.phone.replace(/\D/g, '')}`} className="hover:text-teal-950">

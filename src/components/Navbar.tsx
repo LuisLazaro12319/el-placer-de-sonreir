@@ -50,9 +50,7 @@ export const Navbar: React.FC = () => {
           <div className="flex items-center gap-3">
             <span className="flex items-center gap-1.5 text-teal-900">
               <MapPin className="w-3.5 h-3.5 text-teal-600 shrink-0" />
-              <span>
-                {CLINIC.street}, {CLINIC.locality}
-              </span>
+              <span>{CLINIC.streets}</span>
             </span>
             <span className="hidden md:inline text-teal-300">·</span>
             <span className="hidden md:flex items-center gap-1.5 text-teal-700">

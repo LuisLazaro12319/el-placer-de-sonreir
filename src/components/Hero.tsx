@@ -77,7 +77,7 @@ export const Hero: React.FC = () => {
           <p className="text-lg sm:text-xl text-white leading-relaxed mb-9 max-w-2xl font-medium">
             {CLINIC.servicesSummary.charAt(0).toUpperCase() + CLINIC.servicesSummary.slice(1)} en{' '}
             <strong className="font-extrabold">
-              {CLINIC.street}, {CLINIC.locality}
+              {CLINIC.streets}, {CLINIC.locality}
             </strong>
             . Pedí tu turno por WhatsApp.
           </p>
@@ -111,9 +111,7 @@ export const Hero: React.FC = () => {
             </div>
             <div className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-white/90 text-slate-900 shadow-sm">
               <MapPin className="w-4 h-4 text-teal-600" />
-              <span>
-                {CLINIC.street}, {CLINIC.locality}
-              </span>
+              <span>{CLINIC.streets}</span>
             </div>
           </div>
         </div>
